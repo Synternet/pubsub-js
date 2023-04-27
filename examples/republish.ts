@@ -1,26 +1,3 @@
-# Syntropy PubSub-WS
-
-`syntropy-pubsub-js` is a TypeScript library for the Syntropy DataMesh project that allows you to subscribe to existing data streams or publish new ones. This library is built on top of the NATS messaging system and provides a convenient way to integrate your TypeScript applications with the Syntropy DataMesh platform.
-
-## Features
-
-- Subscribe to existing data streams
-- Publish new data streams
-- Support for JSON messages
-- Customizable connection options
-
-## Installation
-
-To install the library, use the following command:
-
-```bash
-npm install --save syntropy-pubsub-js
-```
-
-## Usage
-Here is a simple example demonstrating how to subscribe to a data stream and republish the received data to another stream:
-
-```typescript
 import { NatsService } from '../pubsub/nats';
 
 const natsUrl = 'nats://127.0.0.1';
@@ -59,10 +36,4 @@ async function main() {
 main().catch((err) => {
     console.error('Error:', err);
     process.exit(1);
-});
-```
-
-This example demonstrates how to connect to a NATS server with WebSocket support, subscribe to a subject, and republish received messages to another subject using the Syntropy PubSub-WS library.
-
-## License
-This project is licensed under the MIT License.
+})
