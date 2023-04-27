@@ -1,4 +1,4 @@
-# Syntropy PubSub-WS
+# Syntropy PubSub-JS
 
 `syntropy-pubsub-js` is a TypeScript library for the Syntropy DataMesh project that allows you to subscribe to existing data streams or publish new ones. This library is built on top of the NATS messaging system and provides a convenient way to integrate your TypeScript applications with the Syntropy DataMesh platform.
 
