@@ -18,7 +18,7 @@ npm install git@gitlab.com:syntropynet/amberdm/sdk/pubsub-js.git
 ```
 
 ## Usage
-Here is a simple example demonstrating how to subscribe to a data stream and republish the received data to another stream:
+Here is a simple example demonstrating how to subscribe to a data stream using seed from developer-portal:
 
 ```typescript
 import { NatsService, createAppJwt } from 'pubsub-js';
