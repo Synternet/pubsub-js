@@ -14,42 +14,39 @@
 To install the library, use the following command:
 
 ```bash
-npm install --save syntropy-pubsub-js
+npm install git@gitlab.com:syntropynet/amberdm/sdk/pubsub-js.git
 ```
 
 ## Usage
 Here is a simple example demonstrating how to subscribe to a data stream and republish the received data to another stream:
 
 ```typescript
-import { NatsService } from '../pubsub/nats';
+import { NatsService, createAppJwt } from 'pubsub-js';
 
-const natsUrl = 'nats://127.0.0.1';
-const userCredsJWT = 'JWT';
-const userCredsSeed = 'SEED';
-const exampleSubscribeSubject = 'example.sub.subject';
-const examplePublishSubject = 'example.pub.subject';
+const natsUrl = "url-to-nats.com";
+const subject = "hackathon.mysubject";
+const dappAccessToken = `SAAGYGEENOBBBBSPZDVVVYEUV3R4LAAAIEYVJOYXMWYJD6YQ5N3LVMQSA4`;
 
-async function republishData(service: NatsService, data: Uint8Array): Promise<void> {
-    console.log(`Received message on ${exampleSubscribeSubject} subject`);
-    await service.publish(examplePublishSubject, data);
-    console.log(`Published message on ${examplePublishSubject} subject`);
+async function printData(data: Uint8Array): Promise<void> {
+    const decoded = new TextDecoder().decode(data);
+    console.log(`Received message on ${subject} subject. Message: ${decoded}`);
 }
 
 async function main() {
     // Connect to the NATS server with credentials
     const service = new NatsService({
         url: natsUrl,
-        userCredsJWT: userCredsJWT,
-        userCredsSeed: userCredsSeed,
+        natsCredsFile: createAppJwt(dappAccessToken),
     });
 
-    console.log('Connecting to NATS server...');
+    console.log("Connecting to NATS server...");
     await service.waitForConnection();
-    console.log('Connected to NATS server.');
+    console.log("Connected to NATS server.");
 
     // Add a handler function to process messages received on the exampleSubscribeSubject
-    service.addHandler(exampleSubscribeSubject, async (data: Uint8Array) => {
-        await republishData(service, data);
+    console.log(`Listening for ${subject} messages...`)
+    service.addHandler(subject, async (data: Uint8Array) => {
+        await printData(data);
     });
 
     // Start serving messages and processing them using the registered handler function
@@ -57,7 +54,7 @@ async function main() {
 }
 
 main().catch((err) => {
-    console.error('Error:', err);
+    console.error("Error:", err);
     process.exit(1);
 });
 ```
