@@ -2,7 +2,7 @@
   "name": "pubsub-js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "publish": "ts-node -T ./examples/publish.ts",
