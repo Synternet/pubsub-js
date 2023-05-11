@@ -59,7 +59,7 @@ main().catch((err) => {
 });
 ```
 
-This example demonstrates how to connect to a NATS server with WebSocket support, subscribe to a subject, and republish received messages to another subject using the Syntropy PubSub-WS library.
+This example demonstrates how to connect to a NATS server, subscribe to a subject using Syntropy PubSub-JS library.
 
 ## License
 This project is licensed under the MIT License.
