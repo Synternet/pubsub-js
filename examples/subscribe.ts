@@ -3,7 +3,7 @@ import { createAppJwt } from "../pubsub/userJwt";
 
 const natsUrl = "url-to-nats.com";
 const subject = "hackathon.mysubject";
-const dappAccessToken = `SAAGYGEENOBBBBSPZDVVVYEUV3R4LAAAIEYVJOYXMWYJD6YQ5N3LVMQSA4`;
+const accessToken = `SAAGYGEENOBBBBSPZDVVVYEUV3R4LAAAIEYVJOYXMWYJD6YQ5N3LVMQSA4`;
 
 async function printData(data: Uint8Array): Promise<void> {
   const decoded = new TextDecoder().decode(data);
@@ -14,7 +14,7 @@ async function main() {
   // Connect to the NATS server with credentials
   const service = new NatsService({
     url: natsUrl,
-    natsCredsFile: createAppJwt(dappAccessToken),
+    natsCredsFile: createAppJwt(accessToken),
   });
 
   console.log("Connecting to NATS server...");
