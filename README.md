@@ -27,19 +27,19 @@ Before you begin using the JavaScript SDK, make sure you have the necessary cred
 1. Import the SDK in your JavaScript code:
 
 ```javascript
-import { Data Availability LayerClient } from 'syntropynet-pubsub-js';
+import { DataAvailabilityLayerClient } from 'syntropynet-pubsub-js';
 ```
 
 2. Initialize the client:
 
 ```javascript
-const client = new Data Availability LayerClient({ accessToken: 'your-access-token', privateKey: 'your-private-key' });
+const client = new DataAvailabilityLayerClient({ accessToken: 'your-access-token', privateKey: 'your-private-key' });
 ```
 
-3. Subscribe to a Data Stream:
+3. Subscribe to a Data Stream(s):
 
 ```javascript
-const stream = client.subscribe('stream-name');
+const stream = client.subscribe(['stream-1', 'stream-2']);
 ```
 
 4. Receive Data Stream Events:
