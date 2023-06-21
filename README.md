@@ -2,7 +2,7 @@
 
 Welcome to the documentation for the JavaScript SDK for the Data Availability Layer by SyntropyNet! This SDK allows seamless integration with our Data Availability Layer solution, enabling you to leverage real-time data streams in your JavaScript applications. With the JavaScript SDK, you can unlock the power of the Data Availability Layer and harness real-time insights for your data-driven projects.
 
-`[syntropy-pubsub-js](https://github.com/SyntropyNet/pubsub-js)` is a TypeScript library for the Syntropy DataMesh project that allows you to subscribe to existing data streams or publish new ones. This library is built on top of the NATS messaging system and provides a convenient way to integrate your TypeScript applications with the Syntropy DataMesh platform.
+`[syntropy-pubsub-js](https://github.com/SyntropyNet/pubsub-js)` is a TypeScript library for the Syntropy Data Availability Layer project that allows you to subscribe to existing data streams or publish new ones. This library is built on top of the NATS messaging system and provides a convenient way to integrate your TypeScript applications with the Syntropy Data Availability Layer platform.
 
 ## Installation
 
@@ -20,20 +20,20 @@ npm install syntropynet-pubsub-js
 
 ## Getting Started
 
-Before you begin using the JavaScript SDK, make sure you have the necessary credentials and access tokens from the SyntropyNet platform. These credentials will allow you to connect to the Data Availability Layer and subscribe to or publish data streams.
+Before you begin using the JavaScript SDK, make sure you have the necessary credentials and access tokens from the Syntropy Developer Portalplatform. These credentials will allow you to connect to the Data Availability Layer and subscribe to or publish data streams.
 
 ## Usage
 
 1. Import the SDK in your JavaScript code:
 
 ```javascript
-import { DataMeshClient } from 'syntropynet-pubsub-js';
+import { Data Availability LayerClient } from 'syntropynet-pubsub-js';
 ```
 
 2. Initialize the client:
 
 ```javascript
-const client = new DataMeshClient({ accessToken: 'your-access-token', privateKey: 'your-private-key' });
+const client = new Data Availability LayerClient({ accessToken: 'your-access-token', privateKey: 'your-private-key' });
 ```
 
 3. Subscribe to a Data Stream:
