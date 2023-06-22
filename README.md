@@ -23,38 +23,46 @@ npm install syntropynet-pubsub-js
 Before you begin using the JavaScript SDK, make sure you have the necessary credentials and access tokens from the Syntropy Developer Portalplatform. These credentials will allow you to connect to the Data Availability Layer and subscribe to or publish data streams.
 
 ## Usage
+The preferred method of authentication is using an access token from the [developer portal](https://developer-portal.syntropynet.com/).
 
-1. Import the SDK in your JavaScript code:
+```JavaScript
+import { NatsService } from "../pubsub/nats";
+import { createAppJwt } from "../pubsub/userJwt";
 
-```javascript
-import { DataAvailabilityLayerClient } from 'syntropynet-pubsub-js';
-```
+const natsUrl = "url-to-nats.com";
+const subject = "hackathon.mysubject";
+const accessToken = `SAAGYGEENOBBBBSPZDVVVYEUV3R4LAAAIEYVJOYXMWYJD6YQ5N3LVMQSA4`;
 
-2. Initialize the client:
+async function printData(data: Uint8Array): Promise<void> {
+    const decoded = new TextDecoder().decode(data);
+    console.log(`Received message on ${subject} subject. Message: ${decoded}`);
+}
 
-```javascript
-const client = new DataAvailabilityLayerClient({ accessToken: 'your-access-token', privateKey: 'your-private-key' });
-```
+async function main() {
+    // Connect to the NATS server with credentials
+    const service = new NatsService({
+        url: natsUrl,
+        natsCredsFile: createAppJwt(accessToken),
+    });
 
-3. Subscribe to a Data Stream(s):
+    console.log("Connecting to NATS server...");
+    await service.waitForConnection();
+    console.log("Connected to NATS server.");
 
-```javascript
-const stream = client.subscribe(['stream-1', 'stream-2']);
-```
+    // Add a handler function to process messages received on the exampleSubscribeSubject
+    console.log(`Listening for ${subject} messages...`)
+    service.addHandler(subject, async (data: Uint8Array) => {
+        await printData(data);
+    });
 
-4. Receive Data Stream Events:
+    // Start serving messages and processing them using the registered handler function
+    await service.serve();
+}
 
-```javascript
-stream.on('event', (event) => {
-  // Handle the data stream event
-  console.log('Received event:', event);
+main().catch((err) => {
+    console.error("Error:", err);
+    process.exit(1);
 });
-```
-
-5. Publish Data to a Stream:
-
-```javascript
-client.publish('stream-name', 'Hello, Data Availability Layer!');
 ```
 
 ## Features
@@ -77,7 +85,7 @@ For detailed usage examples, please refer to the [examples directory](https://gi
 
 Here is a simple example demonstrating how to subscribe to a data stream using seed from developer-portal (the preferred method of authentication is using an access token from the developer portal): 
 
-```Text JavaScript
+```JavaScript
 import { NatsService } from "../pubsub/nats";
 import { createAppJwt } from "../pubsub/userJwt";
 
