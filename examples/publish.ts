@@ -1,9 +1,9 @@
 import { NatsService } from "../pubsub/nats";
 
 const natsUrl = "url-to-nats.com";
-const subject = "hackathon.mysubject";
+const subject = "example.mysubject";
 const publisherNatsCredsFile = `-----BEGIN NATS USER JWT-----
-eyJ0eXAi111V1QiLCJhbGciOiJlZDI1NTE5LW5rZXkifQ.eyJqdGk222JCVDNOSkgyWjczWlkyN1JZRFk1TVpWNFFKRE1VTTdTWE5DVUtQUFZBWU9PNFNINTI3SFJBIiwiaWF0IjoxNjgzNzAxNjQzLCJpc3MiOiJBQjU2T0VQSUdNUUVEREZWQVQ3M1ZWT1RLRlc2T1BHNEZCNVdNRzZRUjdHQlBUSlJJTVdJQVRMMiIsIm5hbWUiOiJIYWNrYXRob24gVXNlciIsInN1YiI6IlVDUUFBV1hXVFRXWkZDTFJZNVlIT1BLVzdETVlNUTNVT1ZYTFdHUUtRMlJZVFJXVEFaTzNaNVhGIiwibmF0cyI6eyJwdWIiOnt9LCJzdWIiOnt9LCJzdWJzIjotMSwiZGF0YSI6LTEsInBheWxvYWQiOi0xLCJ0eXBlIjoidXNlciIsInZlcnNpb2444jJ9fQ.kz6iaIG5NysbczRxTuqr69y6c7YfwvZSuJZ-xXZPDVph333okZEWvRwM6dkMYC3p-qlY7sKiQdqr6eEt1iftAA
+PLEASE_CONTACT_US_FOR_JWT_VALUE
 ------END NATS USER JWT------
 
 ************************* IMPORTANT *************************
@@ -11,7 +11,7 @@ NKEY Seed printed below can be used to sign and prove identity.
 NKEYs are sensitive and should be treated as secrets.
 
 -----BEGIN USER NKEY SEED-----
-SUAAFVCCCFQB4445DWNGCV4SAAAS77XEN523SP3A32MOR6EBBBGWTZUM
+PLEASE_CONTACT_US_FOR_NKEY_SEED_VALUE
 ------END USER NKEY SEED------
 
 *************************************************************`;
