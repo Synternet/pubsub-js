@@ -1,9 +1,9 @@
-import { NatsService } from "../pubsub/nats";
+Ximport { NatsService } from "../pubsub/nats";
 import { createAppJwt } from "../pubsub/userJwt";
 
 const natsUrl = "url-to-nats.com";
-const subject = "hackathon.mysubject";
-const accessToken = `SAAGYGEENOBBBBSPZDVVVYEUV3R4LAAAIEYVJOYXMWYJD6YQ5N3LVMQSA4`;
+const subject = "example.mysubject";
+const accessToken = `EXAMPLE_ACCESS_TOKEN`;
 
 async function printData(data: Uint8Array): Promise<void> {
   const decoded = new TextDecoder().decode(data);
