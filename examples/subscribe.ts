@@ -1,6 +1,7 @@
-Ximport { NatsService } from "../pubsub/nats";
+import { NatsService } from "../pubsub/nats";
 import { createAppJwt } from "../pubsub/userJwt";
 
+// See: https://docs.synternet.com/build/dl-access-points
 const natsUrl = "url-to-nats.com";
 const subject = "example.mysubject";
 const accessToken = `EXAMPLE_ACCESS_TOKEN`;
@@ -22,7 +23,7 @@ async function main() {
   console.log("Connected to NATS server.");
 
   // Add a handler function to process messages received on the exampleSubscribeSubject
-  console.log(`Listening for ${subject} messages...`)
+  console.log(`Listening for ${subject} messages...`);
   service.addHandler(subject, async (data: Uint8Array) => {
     await printData(data);
   });

@@ -1,21 +1,11 @@
 import { NatsService } from "../pubsub/nats";
+import { createAppJwt } from "../pubsub/userJwt";
 
-const natsUrl = "url-to-nats.com";
+// See: https://docs.synternet.com/build/dl-access-points
+const natsUrl =
+  "europe-west3-gcp-dl-testnet-brokernode-frankfurt01.synternet.com";
 const subject = "example.mysubject";
-const publisherNatsCredsFile = `-----BEGIN NATS USER JWT-----
-PLEASE_CONTACT_US_FOR_JWT_VALUE
-------END NATS USER JWT------
-
-************************* IMPORTANT *************************
-NKEY Seed printed below can be used to sign and prove identity.
-NKEYs are sensitive and should be treated as secrets.
-
------BEGIN USER NKEY SEED-----
-PLEASE_CONTACT_US_FOR_NKEY_SEED_VALUE
-------END USER NKEY SEED------
-
-*************************************************************`;
-
+const publisherNatsCredsFile = createAppJwt("EXAMPLE_ACCESS_TOKEN");
 async function main() {
   // Connect to the NATS server with credentials
   const service = new NatsService({
@@ -29,7 +19,7 @@ async function main() {
 
   const message = { hello: "world!" };
   console.log(
-    `Publishing message: ${JSON.stringify(message)} to subject: ${subject}`
+    `Publishing message: ${JSON.stringify(message)} to subject: ${subject}`,
   );
   service.publishJSON(subject, message);
 }

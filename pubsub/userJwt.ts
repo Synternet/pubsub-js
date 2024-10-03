@@ -7,7 +7,7 @@ export const jwtExpirationHours = 2;
 
 export function createAppJwt(
   developerSeed: string,
-  expirationDate: Date = addHours(new Date(), jwtExpirationHours)
+  expirationDate: Date = addHours(new Date(), jwtExpirationHours),
 ) {
   const { seed: userSeed } = generateUserNKeys();
   const jwt = generateUserJwt({ userSeed, developerSeed, expirationDate });
@@ -30,7 +30,7 @@ function generateUserJwt({
   const payload = {
     jti: getJti(),
     iat: getIat(),
-    exp: getExp(expirationDate),
+    // exp: getExp(expirationDate), optionally, expire
     iss: developer.getPublicKey(),
     name: "developer",
     sub: user.getPublicKey(),
@@ -65,7 +65,7 @@ function signJwt(payload: any, keyPair: KeyPair): string {
     "." +
     base64url.encode(JSON.stringify(payload));
   const sigBase64Url = base64url.encode(
-    Buffer.from(keyPair.sign(Buffer.from(jwtBase)))
+    Buffer.from(keyPair.sign(Buffer.from(jwtBase))),
   );
   const jwt = jwtBase + "." + sigBase64Url;
 
@@ -88,14 +88,14 @@ export function computeJwt(jwt: string, userNkeySeed: string) {
   return `-----BEGIN NATS USER JWT-----
   ${jwt}
   ------END NATS USER JWT------
-  
+
   ************************* IMPORTANT *************************
   NKEY Seed printed below can be used to sign and prove identity.
   NKEYs are sensitive and should be treated as secrets.
-  
+
   -----BEGIN USER NKEY SEED-----
   ${userNkeySeed}
   ------END USER NKEY SEED------
-  
+
   *************************************************************`;
 }
