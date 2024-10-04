@@ -2,7 +2,7 @@
 
 Welcome to the documentation for the JavaScript SDK for the Data Layer by Synternet! This SDK allows seamless integration with our Data Layer solution, enabling you to leverage real-time data streams in your JavaScript applications. With the JavaScript SDK, you can unlock the power of the Data Layer and harness real-time insights for your data-driven projects.
 
-[synternet-pubsub-js](https://github.com/Synternet/pubsub-js) is a TypeScript library for the Synternet Data Layer project that allows you to subscribe to existing data streams or publish new ones. This library is built on top of the NATS messaging system and provides a convenient way to integrate your TypeScript applications with the Syntropy Data Layer platform.
+[synternet-pubsub-js](https://github.com/Synternet/pubsub-js) is a TypeScript library for the Synternet Data Layer project that allows you to subscribe to existing data streams or publish new ones. This library is built on top of the NATS messaging system and provides a convenient way to integrate your TypeScript applications with the Synternet Data Layer platform.
 
 ## Installation
 
