@@ -1,8 +1,8 @@
-# Syntropy PubSub-JS
+# Synternet PubSub-JS
 
-Welcome to the documentation for the JavaScript SDK for the Data Layer by SyntropyNet! This SDK allows seamless integration with our Data Layer solution, enabling you to leverage real-time data streams in your JavaScript applications. With the JavaScript SDK, you can unlock the power of the Data Layer and harness real-time insights for your data-driven projects.
+Welcome to the documentation for the JavaScript SDK for the Data Layer by Synternet! This SDK allows seamless integration with our Data Layer solution, enabling you to leverage real-time data streams in your JavaScript applications. With the JavaScript SDK, you can unlock the power of the Data Layer and harness real-time insights for your data-driven projects.
 
-[syntropy-pubsub-js](https://github.com/SyntropyNet/pubsub-js) is a TypeScript library for the Syntropy Data Layer project that allows you to subscribe to existing data streams or publish new ones. This library is built on top of the NATS messaging system and provides a convenient way to integrate your TypeScript applications with the Syntropy Data Layer platform.
+[synternet-pubsub-js](https://github.com/Synternet/pubsub-js) is a TypeScript library for the Synternet Data Layer project that allows you to subscribe to existing data streams or publish new ones. This library is built on top of the NATS messaging system and provides a convenient way to integrate your TypeScript applications with the Syntropy Data Layer platform.
 
 ## Installation
 
@@ -12,23 +12,18 @@ To use the JavaScript SDK for Data Layer in your project, you can include the pr
 <script src="path/to/pubsub-js.js"></script>
 ```
 
-Alternatively, you can install it using npm:
-
-```shell
-npm install syntropynet-pubsub-js
-```
-
 ## Getting Started
 
-Before you begin using the JavaScript SDK, make sure you have the necessary credentials and access tokens from the [developer portal](https://developer-portal.syntropynet.com/) platform. These credentials will allow you to connect to the Data Layer and subscribe to or publish data streams.
+Before you begin using the JavaScript SDK, make sure you have the necessary credentials and access tokens from the [portal (mainnet)](https://portal.synternet.com/) or [portal (testnet)](https://portal-testnet.synternet.com/) platform. These credentials will allow you to connect to the Data Layer and subscribe to or publish data streams.
 
 ## Usage
-The preferred method of authentication is using an access token from the [developer portal](https://developer-portal.syntropynet.com/).
+The preferred method of authentication is using an access token from the [portal (mainnet)](https://portal.synternet.com/) or [portal (testnet)](https://portal-testnet.synternet.com/).
 
 ```JavaScript
 import { NatsService } from "../pubsub/nats";
 import { createAppJwt } from "../pubsub/userJwt";
 
+// See: https://docs-dev.synternet.com/build/dl-access-points
 const natsUrl = "url-to-nats.com";
 const subject = "hackathon.mysubject";
 const accessToken = `EXAMPLE_ACCESS_TOKEN`;
@@ -69,7 +64,7 @@ main().catch((err) => {
 
 The JavaScript SDK for Data Layer offers the following features:
 
-- **Subscribe to Existing Data Streams**: Easily subscribe to pre-existing data streams within the Syntropy Data Layer. Stay updated with real-time data insights and leverage them in your JavaScript applications.
+- **Subscribe to Existing Data Streams**: Easily subscribe to pre-existing data streams within the Synternet Data Layer. Stay updated with real-time data insights and leverage them in your JavaScript applications.
 
 - **Publish New Data Streams**: Create and publish your own data streams directly from your applications. Share data with other participants in the Data Layer, enabling collaboration and innovation.
 
@@ -81,14 +76,15 @@ With these powerful features, the JavaScript SDK empowers you to seamlessly inte
 
 ## Examples
 
-For detailed usage examples, please refer to the [examples directory](https://github.com/SyntropyNet/pubsub-js/examples) in the repository. These examples cover various scenarios and demonstrate how to utilize the SDK's features effectively.
+For detailed usage examples, please refer to the [examples directory](https://github.com/Synternet/pubsub-js/examples) in the repository. These examples cover various scenarios and demonstrate how to utilize the SDK's features effectively.
 
-Here is a simple example demonstrating how to subscribe to a data stream using seed from [developer portal](https://developer-portal.syntropynet.com/) (the preferred method of authentication is using an access token from the [developer portal](https://developer-portal.syntropynet.com/)): 
+Here is a simple example demonstrating how to subscribe to a data stream using seed from [portal (mainnet)](https://portal.synternet.com/) or [portal (testnet)](https://portal-testnet.synternet.com/) (the preferred method of authentication is using an access token):
 
 ```JavaScript
 import { NatsService } from "../pubsub/nats";
 import { createAppJwt } from "../pubsub/userJwt";
 
+// See: https://docs-dev.synternet.com/build/dl-access-points
 const natsUrl = "url-to-nats.com";
 const subject = "example.mysubject";
 const accessToken = `EXAMPLE_ACCESS_TOKEN`;
@@ -127,7 +123,7 @@ main().catch((err) => {
 
 ## Contributing
 
-We welcome contributions from the community! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/SyntropyNet/pubsub-js). We appreciate your feedback and collaboration in making this SDK even better. 
+We welcome contributions from the community! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/Synternet/pubsub-js). We appreciate your feedback and collaboration in making this SDK even better.
 
 ## Contribution Guidelines
 
