@@ -142,6 +142,6 @@ We appreciate your contributions and thank you for your support in making this p
 
 ## Support
 
-If you encounter any difficulties or have questions regarding the JavaScript SDK for Data  Layer, please reach out to our support team at [Discord #developer-discussion](https://discord.com/channels/503896258881126401/1125658694399561738). We are here to assist you and ensure a smooth experience with our SDK.
+If you encounter any difficulties or have questions regarding the JavaScript SDK for Data  Layer, please reach out to our support team at [Discord #developers-chat](https://discord.com/channels/503896258881126401/1125658694399561738). We are here to assist you and ensure a smooth experience with our SDK.
 
 We hope this documentation provides you with a comprehensive understanding of the JavaScript SDK for the Data  Layer. Enjoy leveraging real-time data streams and unlocking the power of the Data  Layer in your JavaScript applications!
