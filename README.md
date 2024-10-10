@@ -4,14 +4,6 @@ Welcome to the documentation for the JavaScript SDK for the Data Layer by Synter
 
 [synternet-pubsub-js](https://github.com/Synternet/pubsub-js) is a TypeScript library for the Synternet Data Layer project that allows you to subscribe to existing data streams or publish new ones. This library is built on top of the NATS messaging system and provides a convenient way to integrate your TypeScript applications with the Synternet Data Layer platform.
 
-## Installation
-
-To use the JavaScript SDK for Data Layer in your project, you can include the provided script in your HTML:
-
-```html
-<script src="path/to/pubsub-js.js"></script>
-```
-
 ## Getting Started
 
 Before you begin using the JavaScript SDK, make sure you have the necessary credentials and access tokens from the [portal (mainnet)](https://portal.synternet.com/) or [portal (testnet)](https://portal-testnet.synternet.com/) platform. These credentials will allow you to connect to the Data Layer and subscribe to or publish data streams.
