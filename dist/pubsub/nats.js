@@ -98,7 +98,7 @@ class NatsService {
             if (!this.nats) {
                 throw new Error("NATS connection not initialized");
             }
-            yield this.nats.request(subject, data, opts);
+            return this.nats.request(subject, data, opts);
         });
     }
     // Publish JSON data to a specific subject

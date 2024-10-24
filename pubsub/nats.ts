@@ -5,6 +5,7 @@ import {
     credsAuthenticator,
     jwtAuthenticator,
     RequestOptions,
+    Msg,
 } from "nats";
 
 // Define a handler type that processes Uint8Array data and returns a Promise or void
@@ -109,11 +110,11 @@ export class NatsService {
         subject: string,
         data: Uint8Array,
         opts?: RequestOptions,
-    ): Promise<void> {
+    ): Promise<Msg> {
         if (!this.nats) {
             throw new Error("NATS connection not initialized");
         }
-        await this.nats.request(subject, data, opts);
+        return this.nats.request(subject, data, opts);
     }
 
     // Publish JSON data to a specific subject
