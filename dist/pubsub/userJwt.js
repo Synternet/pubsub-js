@@ -22,7 +22,7 @@ function generateUserJwt({ userSeed, developerSeed, expirationDate, }) {
     const payload = {
         jti: getJti(),
         iat: getIat(),
-        exp: getExp(expirationDate),
+        // exp: getExp(expirationDate), optionally, expire
         iss: developer.getPublicKey(),
         name: "developer",
         sub: user.getPublicKey(),
@@ -67,15 +67,15 @@ function computeJwt(jwt, userNkeySeed) {
     return `-----BEGIN NATS USER JWT-----
   ${jwt}
   ------END NATS USER JWT------
-  
+
   ************************* IMPORTANT *************************
   NKEY Seed printed below can be used to sign and prove identity.
   NKEYs are sensitive and should be treated as secrets.
-  
+
   -----BEGIN USER NKEY SEED-----
   ${userNkeySeed}
   ------END USER NKEY SEED------
-  
+
   *************************************************************`;
 }
 exports.computeJwt = computeJwt;

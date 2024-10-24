@@ -92,6 +92,15 @@ class NatsService {
             yield this.nats.publish(subject, data);
         });
     }
+    // Publish a request expecting response back
+    request(subject, data, opts) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (!this.nats) {
+                throw new Error("NATS connection not initialized");
+            }
+            yield this.nats.request(subject, data, opts);
+        });
+    }
     // Publish JSON data to a specific subject
     publishJSON(subject, data) {
         return __awaiter(this, void 0, void 0, function* () {
